@@ -12,7 +12,15 @@
 </head>
 
 <body>
-    <h1>Hello World!</h1>
+    <h1>{{$title}}</h1>
+
+    <ul>
+        @foreach ($nav as $link)
+            <li>
+                <a href="{{route($link)}}">{{$link}}</a>
+            </li> 
+        @endforeach
+    </ul>
     
 </body>
 </html>

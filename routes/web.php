@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +15,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
-});
+    $site = "Laravel primi passi";
+    $navbar = [
+        "about",
+        "services"
+    ];
+
+    return view('home', [
+        "title" => $site,
+        "nav" => $navbar
+    ]);
+})->name("home");
+
+Route::get('/about', function () {
+    return view('about');
+}) -> name("about");
+
+Route::get('/services', function () {
+    return 'Ciao';
+}) ->name("services");
+
